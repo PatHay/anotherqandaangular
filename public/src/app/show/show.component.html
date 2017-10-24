@@ -1,0 +1,15 @@
+<h3><a [routerLink]="['/questions']" (click)="saveLike()">Home</a></h3> | 
+<h3><a [routerLink]="['/question',question._id,'new_answer']" (click)="saveLike()">Answer this Question</a></h3>
+<h3><a [routerLink]="['']" (click)="saveLike()">Logout</a></h3>
+<h1>{{ question.question }}</h1>
+<h4 *ngIf="question.desc">{{ question.desc }}</h4>
+<div *ngFor="let answer of allAnswers; let i = index">
+
+
+  <p>{{answer.user}}</p>
+  <p>{{answer.answer}}</p>
+  <p>{{answer.desc}}</p>
+  <p>{{answer.like}}</p>
+  <button (click)="like(i)">FUCKING LIKE!</button>
+
+</div>
